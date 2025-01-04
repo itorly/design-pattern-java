@@ -1,21 +1,22 @@
-package com.lxf.dp.behavioral.chainOfResponsibility;
+package com.dp.behavioral.chainOfResponsibility;
 
-public class FirstHandler extends AbstractHandler {
+public class SecondHandler extends AbstractHandler {
 
     private int getData() {
-        return 60;
+        return 75;
     }
 
-    private int level = 1;
-
+    int level = 2;
     @Override
     public int handle(int x) {
         int data = getData();
+
         if (x >= data) {
             if ( null != this.nextHandler ) {
                 return this.nextHandler.handle(x);
             }
         }
+
         return level;
     }
 }

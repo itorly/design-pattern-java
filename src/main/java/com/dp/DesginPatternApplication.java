@@ -1,4 +1,4 @@
-package com.lxf;
+package com.dp;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

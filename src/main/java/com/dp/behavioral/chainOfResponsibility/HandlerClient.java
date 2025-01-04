@@ -1,4 +1,4 @@
-package com.lxf.dp.behavioral.chainOfResponsibility;
+package com.dp.behavioral.chainOfResponsibility;
 
 import java.util.Random;
 
