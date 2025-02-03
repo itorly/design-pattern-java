@@ -36,7 +36,7 @@ public class Singleton {
         for (int i = 0; i < 50; i++) {
             executor.execute(new MyRunnable());
         }
-
+        executor.shutdown();
     }
 }
 
