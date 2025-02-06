@@ -1,5 +1,7 @@
 package com.dp.creational.singleton.thread_safe;
 
+import org.springframework.http.converter.json.GsonBuilderUtils;
+
 import java.util.concurrent.*;
 
 public class Singleton {
@@ -18,11 +20,14 @@ public class Singleton {
         return SingletonHelper.INSTANCE;
     }
 
-    public void printIndex() {
-        System.out.println("index:" + index);
+    public int getIndex() {
+        return index;
     }
 
     public static void main(String[] args) {
+
+        System.out.println("start...");
+
         ThreadPoolExecutor executor = new ThreadPoolExecutor(
                 10,
                 10,
@@ -33,10 +38,12 @@ public class Singleton {
                 new ThreadPoolExecutor.CallerRunsPolicy()
         );
 
-        for (int i = 0; i < 50; i++) {
+        for (int i = 0; i < 10000000; i++) {
             executor.execute(new MyRunnable());
         }
         executor.shutdown();
+
+        System.out.println("end.");
     }
 }
 
@@ -45,6 +52,8 @@ class MyRunnable implements Runnable {
     @Override
     public void run() {
         Singleton singleton = Singleton.getInstance();
-        singleton.printIndex();
+        if (singleton.getIndex() != 1) {
+            System.out.println("index:" + singleton.getIndex());
+        }
     }
 }
