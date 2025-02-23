@@ -18,8 +18,15 @@ public class TreeType {
         this.texture = texture;
     }
 
-    public void draw(int x, int y) {
-        // Draw the tree type
-        System.out.printf("Drawing a %s tree at (%d, %d) with color %s and texture %s%n", name, x, y, color, texture);
+    public String getName() {
+        return name;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public String getTexture() {
+        return texture;
     }
 }

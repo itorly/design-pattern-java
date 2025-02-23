@@ -3,7 +3,7 @@ package com.dp.structural.flyweight;
 import java.util.HashMap;
 import java.util.Map;
 
-public class TreeFactory {
+public class TreeTypeFactory {
 
     private static final Map<String, TreeType> treeTypes = new HashMap<>();
 

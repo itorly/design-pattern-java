@@ -11,11 +11,20 @@ public class Tree {
         this.type = type;
     }
 
-    public TreeType geyTreeType() {
+    public TreeType getTreeType() {
         return this.type;
     }
 
+    /**
+     * Draw the tree
+     */
     public void draw() {
-        type.draw(x, y);
+        String name = type.getName();
+        String color = type.getColor();
+        String texture = type.getTexture();
+        System.out.printf(
+                "Drawing a %s tree at (%d, %d) with color %s and texture %s%n",
+                name, x, y, color, texture
+        );
     }
 }

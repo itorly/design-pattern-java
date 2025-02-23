@@ -1,9 +1,12 @@
 package com.dp.structural.flyweight;
 
+/**
+ * The Flyweight pattern efficiently supports a large number of fine-grained objects by sharing.
+ */
 public class FlyweightDemo {
     public static void main(String[] args) {
-        TreeType oakType = TreeFactory.getTreeType("Oak", "Green", "Rough");
-        TreeType pineType = TreeFactory.getTreeType("Pine", "Dark Green", "Smooth");
+        TreeType oakType = TreeTypeFactory.getTreeType("Oak", "Green", "Rough");
+        TreeType pineType = TreeTypeFactory.getTreeType("Pine", "Dark Green", "Smooth");
 
         Tree tree1 = new Tree(10, 20, oakType);
         Tree tree2 = new Tree(30, 40, pineType);
@@ -14,6 +17,6 @@ public class FlyweightDemo {
         tree3.draw();
 
         // Verify that the same TreeType object is reused
-        System.out.println("Are tree1 and tree3 using the same TreeType object? " + (tree1.geyTreeType() == tree3.geyTreeType()));
+        System.out.println("Are tree1 and tree3 using the same TreeType object? " + (tree1.getTreeType() == tree3.getTreeType()));
     }
 }
