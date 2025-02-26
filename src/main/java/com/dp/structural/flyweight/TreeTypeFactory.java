@@ -5,13 +5,13 @@ import java.util.Map;
 
 public class TreeTypeFactory {
 
-    private static final Map<String, TreeType> treeTypes = new HashMap<>();
+    private static final Map<String, TreeType> treeTypeMap = new HashMap<>();
 
     public static TreeType getTreeType(String name, String color, String texture) {
-        TreeType result = treeTypes.get(name);
+        TreeType result = treeTypeMap.get(name);
         if (result == null) {
             result = new TreeType(name, color, texture);
-            treeTypes.put(name, result);
+            treeTypeMap.put(name, result);
         }
         return result;
     }
