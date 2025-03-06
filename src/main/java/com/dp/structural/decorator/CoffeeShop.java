@@ -1,5 +1,9 @@
 package com.dp.structural.decorator;
 
+/**
+ * Without altering the original class,
+ * dynamically extend its functionality.
+ */
 public class CoffeeShop {
 
     public static void main(String[] args) {
